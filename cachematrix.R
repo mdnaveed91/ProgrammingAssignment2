@@ -30,3 +30,19 @@ cacheSolve <- function(x=matrix(), ...) {
     x$setmatrix(m)
     m
 }
+test <- function(){
+  
+  t <- matrix(c(1,3,1,2),nrow=2)  # Creating a new matrix
+  message("Input Matrix:"); print(t)
+  
+  message("Calling makeCacheMatrix")
+  t2 <- makeCacheMatrix(t)        # Creating special matrix object
+  #print(t2)
+  
+  message("Calling cacheSolve (1st time)")
+  print(cacheSolve(t2))           # Generating inverse
+  
+  message("Calling cacheSolve (2nd time)")
+  cacheSolve(t2)                  # Generating inverse (returned from cache)
+  
+}
